@@ -17,11 +17,17 @@ npm start
 
 ### [v1 - Basic Cube Rendering](https://github.com/nikgraf/webvr-expriments/tree/master/HelloWorld/v1)
 
+<img width="1176" alt="screen shot cube" src="https://cloud.githubusercontent.com/assets/223045/21510601/a1957270-cc95-11e6-9e73-42f82339f76e.png">
+
 With this example I tried to explore how to create my own geometries and rendering it within ReactVR. I evaluated a couple tools and in the end decided to go with [Blender](https://www.blender.org/). I still struggle a bit with the interface, but Blender is open source and has probably all the advanced features I need for the next couple years.
 
-In Blender I created a cube, removed the light and camera, added a material, exported the scene and then learned that Three.js failed to render my simple cube properly as soon as I create a `<Mesh />`. What worked for me was to remove all the gimmick from the material and reduce it to `Diffuse` & `Specular` lightning. I unchecked all other checkboxes for the material. I had similar issues in the other tools I used.
+In Blender I created a cube, removed the light and camera, added a material, exported the scene and then learned that Three.js failed to render my simple cube properly as soon as I create a `<Mesh />`. What worked for me was to remove all the gimmick from the material and reduce it to `Diffuse` & `Specular` lighting. I unchecked all other checkboxes for the material. I had similar issues in the other tools I used.
+
+<img width="303" alt="material setup" src="https://cloud.githubusercontent.com/assets/223045/21510599/a19189ee-cc95-11e6-912c-64eaf0c4f1ee.png">
 
 ### [v2 - Tree (first custom component)](https://github.com/nikgraf/webvr-expriments/tree/master/HelloWorld/v2)
+
+<img width="1176" alt="screen shot tree" src="https://cloud.githubusercontent.com/assets/223045/21510600/a1920982-cc95-11e6-8896-b5c963479a86.png">
 
 The goal of this stage was to create a `Tree` component. I created two geometries (tree-crown, tree-trunk) and placed them in my `World` component. After some positioning I could extract both into a `Tree` component. This allowed me to easily create a second try and place it next to the first one.
 
@@ -30,6 +36,8 @@ In addition I generated a plane geometry in Blender as floor. For the sky I gene
 Initially I planned to place the scenic camera around 1 meter above the ground, but discovered a [bug](https://github.com/facebookincubator/react-vr/issues/33) with the `<Scene />` component. My fallback was to simply place the floor as well as the trees with -1 on the z-axis.
 
 ### [v3 - Forrest](https://github.com/nikgraf/webvr-expriments/tree/master/HelloWorld/v3)
+
+<img width="1176" alt="screen shot forrest" src="https://cloud.githubusercontent.com/assets/223045/21510598/a19134da-cc95-11e6-94e5-af9a6279b368.png">
 
 Next up I wanted to have a more interesting scene as well as exploring how easily I could generate it. I decided to create a forrest. This was pretty much straight forward as I could simply create a `Forrest` component which uses the `Tree` component multiple times. By adding some randomizers for positioning, height and scale, I ended up with what I envisioned.
 
