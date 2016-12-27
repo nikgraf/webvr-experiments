@@ -9,6 +9,7 @@ This is an experience report/guide to explore ReactVR. Keep in mind I had some b
 To try out the examples run
 
 ```
+# cd into/the/folder
 yarn install
 npm start
 # open http://localhost:8081/vr/
