@@ -23,7 +23,7 @@ With this example I tried to explore how to create my own geometries and renderi
 
 In Blender I created a cube, removed the light and camera, added a material, exported the scene and then learned that Three.js failed to render my simple cube properly as soon as I create a `<Mesh />`. What worked for me was to remove all the gimmick from the material and reduce it to `Diffuse` & `Specular` lighting. I unchecked all other checkboxes for the material. I had similar issues in the other tools I used.
 
-<img width="151" alt="material setup" src="https://cloud.githubusercontent.com/assets/223045/21510599/a19189ee-cc95-11e6-912c-64eaf0c4f1ee.png">
+<img width="220" alt="material setup" src="https://cloud.githubusercontent.com/assets/223045/21510599/a19189ee-cc95-11e6-912c-64eaf0c4f1ee.png">
 
 ### [v2 - Tree (first custom component)](https://github.com/nikgraf/webvr-expriments/tree/master/HelloWorld/v2)
 
