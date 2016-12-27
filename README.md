@@ -6,6 +6,14 @@ A collection of ReactVR experiments (potentially A-Frame and WebVR written in Re
 
 This is an experience report/guide to explore ReactVR. Keep in mind I had some basic knowledge in 3D-modeling as well as computer graphics beforehand. Please ping me on Twitter in case you have questions or I take things for granted you have a hard time to wrap your mind around. I'm planning to write a longer getting started guide. I highly recommend to read the full [ReactVR docs](https://facebookincubator.github.io/react-vr/docs/getting-started.html). I did as well :)
 
+To try out the examples run
+
+```
+yarn install
+npm start
+# open http://localhost:8081/vr/
+```
+
 ### [v1 - Basic Cube Rendering](https://github.com/nikgraf/webvr-expriments/tree/master/HelloWorld/v1)
 
 With this example I tried to explore how to create my own geometries and rendering it within ReactVR. I evaluated a couple tools and in the end decided to go with [Blender](https://www.blender.org/). I still struggle a bit with the interface, but Blender is open source and has probably all the advanced features I need for the next couple years.
