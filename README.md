@@ -29,7 +29,7 @@ In Blender I created a cube, removed the light and camera, added a material, exp
 
 <img width="1176" alt="screen shot tree" src="https://cloud.githubusercontent.com/assets/223045/21510600/a1920982-cc95-11e6-8896-b5c963479a86.png">
 
-The goal of this stage was to create a `Tree` component. I created two geometries (tree-crown, tree-trunk) and placed them in my `World` component. After some positioning I could extract both into a `Tree` component. This allowed me to easily create a second try and place it next to the first one.
+The goal of this stage was to create a `Tree` component. I created two geometries (tree-crown, tree-trunk) and placed them in my `World` component. After some positioning I could extract both into a `Tree` component. This allowed me to create a second try and place it next to the first one.
 
 In addition I generated a plane geometry in Blender as floor. For the sky I generated a blue gradient image and used it in a `<Pano />` component.
 
@@ -39,7 +39,7 @@ Initially I planned to place the scenic camera around 1 meter above the ground, 
 
 <img width="1176" alt="screen shot forrest" src="https://cloud.githubusercontent.com/assets/223045/21510598/a19134da-cc95-11e6-94e5-af9a6279b368.png">
 
-Next up I wanted to have a more interesting scene as well as exploring how easily I could generate it. I decided to create a forrest. This was pretty much straight forward as I could simply create a `Forrest` component which uses the `Tree` component multiple times. By adding some randomizers for positioning, height and scale, I ended up with what I envisioned.
+Next up I wanted to have a more interesting scene as well as exploring how I could generate it. I decided to create a forrest. This was pretty much straight forward as I could create a `Forrest` component which uses the `Tree` component multiple times. By adding some randomizers for positioning, height and scale, I ended up with what I envisioned.
 
 Right now 100 trees are generated and the user is placed at the center of the forrest. I tried with 1000, but this led to a laggy experience (MacBook 13", Chrome Canary).
 
@@ -47,4 +47,4 @@ What bothered me a bit was that for each Tree a fetch request was fired. I was h
 
 ### v4 - Animation (coming soon …)
 
-Next up I'm going to look into object animations. Probably start with clouds and then move on to birds.
+Next up I'm going to look into object animations. I'm going to start with clouds and then move on to birds.
