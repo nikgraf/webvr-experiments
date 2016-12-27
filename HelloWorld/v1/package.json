@@ -1,0 +1,19 @@
+{
+  "name": "hello_world",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "bundle": "node node_modules/react-vr/scripts/bundle.js",
+    "postinstall": "node postinstall.js && echo done"
+  },
+  "dependencies": {
+    "ovrui": "~0.1.0",
+    "ovr-audio": "~0.1.0",
+    "react": "15.3.2",
+    "react-native": "0.37.0",
+    "three": "^0.80.1",
+    "react-vr": "~0.1.0",
+    "react-vr-web": "~0.1.0"
+  }
+}
