@@ -6,29 +6,31 @@ import {
   Pano,
   Mesh,
   View,
+  Scene,
   PointLight,
   AmbientLight,
+  DirectionalLight,
 } from 'react-vr';
-import Tree from './components/Tree';
+import Forrest from './components/Forrest';
 
 class World extends Component {
   render() {
     return (
       <View>
-        <AmbientLight intensity={0.4} />
-        <PointLight style={{ color:'white', transform:[{translate : [0, 400, 700]}]}} />
-        <Pano source={asset('heaven.png')}/>
-        <Tree
-          style={{
-            transform: [
-              {translate: [0, -1, -5]},
-            ]
-          }}
+        <AmbientLight intensity={0.85} />
+        <PointLight
+          intensity={0.35}
+          style={{ color:'white', transform:[{translate : [0, 600, 300]}]}}
         />
-        <Tree
+        <DirectionalLight
+          intensity={0.1}
+          style={{ transform:[{translate : [0, -600, -300]}]}}
+        />
+        <Pano source={asset('heaven.png')}/>
+        <Forrest
           style={{
             transform: [
-              {translate: [5, -1, -5]},
+              {translate: [-35, -1, -35]},
             ]
           }}
         />

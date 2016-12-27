@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   AppRegistry,
   asset,
@@ -7,43 +7,28 @@ import {
   Mesh,
   View,
   PointLight,
-  AmbientLight,
 } from 'react-vr';
-import Tree from './components/Tree';
 
-class World extends Component {
+class hello_world extends React.Component {
   render() {
     return (
       <View>
-        <AmbientLight intensity={0.4} />
-        <PointLight style={{ color:'white', transform:[{translate : [0, 400, 700]}]}} />
-        <Pano source={asset('heaven.png')}/>
-        <Tree
-          style={{
-            transform: [
-              {translate: [0, -1, -5]},
-            ]
-          }}
-        />
-        <Tree
-          style={{
-            transform: [
-              {translate: [5, -1, -5]},
-            ]
-          }}
-        />
+        <PointLight style={{color:'white', transform:[{translate : [0, 400, 700]}]}} />
+        <Pano source={asset('chess-world.jpg')}/>
         <Mesh
-          source={{ mesh: asset('plane.obj'), mtl: asset('plane.mtl'), lit: true }}
-          style={{
-            transform: [
-              {scale: [1, 1, 1]},
-              {translate: [0, -1, 0]},
-            ]
-          }}
+          style={{ transform: [
+            {translate: [0, -5, -20]},
+            {rotateY: -30},
+            {rotateX: -40}
+          ] }}
+          source={{ mesh: asset('cube2.obj'), mtl: asset('cube2.mtl'), lit: true }}
         />
       </View>
     );
   }
 };
 
-AppRegistry.registerComponent('hello_world', () => World);
+
+
+
+AppRegistry.registerComponent('hello_world', () => hello_world);
