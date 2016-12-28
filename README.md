@@ -4,7 +4,10 @@ A collection of ReactVR experiments (potentially A-Frame and WebVR using ReasonM
 
 ## Hello World (ReactVR)
 
-This is an experience report/guide to explore ReactVR. Keep in mind I had some basic knowledge in 3D-modeling as well as computer graphics beforehand. Please ping me on Twitter in case you have questions or I take things for granted you have a hard time wrapping your head around. I also highly recommend to read the full [ReactVR docs](https://facebookincubator.github.io/react-vr/docs/getting-started.html). I did as well :)
+
+This is an experience report/guide to explore ReactVR. Keep in mind I had some basic knowledge in 3D-modeling as well as computer graphics beforehand. Please ping me on [Twitter](https://twitter.com/nikgraf) in case you have questions or I take things for granted you have a hard time wrapping your head around. I also highly recommend to read the full [ReactVR docs](https://facebookincubator.github.io/react-vr/docs/getting-started.html). I did as well :)
+
+![reactvr-helloworld](https://cloud.githubusercontent.com/assets/223045/21521233/3fec3b92-ccfb-11e6-9027-7a6b9571724f.gif)
 
 To try out the examples run
 
