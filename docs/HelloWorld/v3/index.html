@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>hello_world</title>
+    <style>body { margin: 0; }</style>
+  <head>
+  <body>
+    <!-- When you're ready to deploy your app, update this line to point to your compiled client.bundle.js -->
+    <script src="./client.bundle.js?platform=vr"></script>
+    <script>
+      // Initialize the React VR application
+      ReactVR.init(
+        // When you're ready to deploy your app, update this line to point to
+        // your compiled index.bundle.js
+        './index.bundle.js?platform=vr',
+        // Attach it to the body tag
+        document.body
+      );
+    </script>
+  </body>
+</html>
