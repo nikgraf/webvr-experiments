@@ -1,6 +1,6 @@
 # webvr-expriments
 
-A collection of ReactVR experiments (potentially A-Frame and WebVR written in Reason &amp; Elm)
+A collection of ReactVR experiments (potentially A-Frame and WebVR using ReasonML &amp; Elm)
 
 ## Hello World (ReactVR)
 
