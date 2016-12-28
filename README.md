@@ -54,7 +54,7 @@ export default ({ style }) => (
 
 In addition I generated a plane geometry in Blender as floor. For the sky I generated a blue gradient image and used it in a `<Pano />` component.
 
-Initially I planned to place the scenic camera around one meter above the ground, but discovered a [bug](https://github.com/facebookincubator/react-vr/issues/33) with the `<Scene />` component. My fallback was to simply place the floor as well as the trees with -1 (meter) on the z-axis.
+Initially I planned to place the scenic camera around one meter above the ground, but discovered a [bug](https://github.com/facebookincubator/react-vr/issues/33) with the `<Scene />` component. My fallback was to position the floor as well as the trees -1 (meter) on the z-axis.
 
 ### [v3 - Forrest](https://github.com/nikgraf/webvr-expriments/tree/master/HelloWorld/v3)
 
