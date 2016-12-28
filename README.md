@@ -18,7 +18,7 @@ npm start
 # open http://localhost:8081/vr/
 ```
 
-Or check out the hosted [live demo of HelloWorld v3](https://nikgraf.github.io/webvr-expriments/HelloWorld/v3/).
+Or check out the hosted [live demo of HelloWorld v3](https://nikgraf.github.io/webvr-experiments/HelloWorld/v3/).
 
 ### [v1 - Basic Cube Rendering](https://github.com/nikgraf/webvr-expriments/tree/master/HelloWorld/v1)
 
