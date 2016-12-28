@@ -90,4 +90,4 @@ What bothered me a bit was that for each Tree a fetch request was fired. I was h
 
 ### v4 - Animation (coming soon …)
 
-Next up I'm going to look into animations using clouds and bird.s
+Next up I'm going to look into animations using clouds and birds.
