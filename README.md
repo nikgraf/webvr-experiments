@@ -21,7 +21,7 @@ Or check out the hosted [live demo of HelloWorld v3](https://nikgraf.github.io/w
 
 <img width="1176" alt="screen shot cube" src="https://cloud.githubusercontent.com/assets/223045/21510601/a1957270-cc95-11e6-9e73-42f82339f76e.png">
 
-With this example I wanted to explore how to create my own geometries and render it within ReactVR. I evaluated a couple of tools and in the end decided to go with [Blender](https://www.blender.org/). I'm still struggling with the interface a bit, but Blender is open source has all the advanced features I will probably need for the next couple years.
+With this example I wanted to explore how to create my own geometries and render it within ReactVR. I evaluated a couple of tools and in the end decided to go with [Blender](https://www.blender.org/). I'm still struggling with the interface a bit, but Blender is open source has all the advanced features I will probably need for the next couple of years.
 
 In Blender I created a cube, removed the light and camera, added a material to color the cube's surfaces and exported the scene to the Wavefront `.obj` (geometry) and `.mtl` (material) format. Then learned that Three.js failed to render my simple cube properly as soon as I create a `<Mesh source={{ mesh: asset('cube.obj'), mtl: asset('cube.mtl'), lit: true }} />` due some issues with the material definitions. What worked for me was to remove all the gimmick features from the material and reduce it to `Diffuse` & `Specular` lighting. I unchecked all other checkboxes for the material. This is not a Blender only issue, as I encountered similar issues once I gave other tools a try.
 
