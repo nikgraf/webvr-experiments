@@ -15,6 +15,8 @@ npm start
 # open http://localhost:8081/vr/
 ```
 
+Or check out the hosted [live demo of HelloWorld v3](https://nikgraf.github.io/webvr-expriments/HelloWorld/v3/).
+
 ### [v1 - Basic Cube Rendering](https://github.com/nikgraf/webvr-expriments/tree/master/HelloWorld/v1)
 
 <img width="1176" alt="screen shot cube" src="https://cloud.githubusercontent.com/assets/223045/21510601/a1957270-cc95-11e6-9e73-42f82339f76e.png">
