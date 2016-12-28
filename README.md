@@ -1,4 +1,4 @@
-# webvr-expriments
+# WebVR Experiments
 
 A collection of ReactVR experiments (potentially A-Frame and WebVR using ReasonML &amp; Elm)
 
@@ -56,13 +56,13 @@ In addition to that I generated a plane geometry in Blender as floor element. Fo
 
 Initially I planned to place the scenic camera approximately one meter above the ground, but discovered a [bug](https://github.com/facebookincubator/react-vr/issues/33) with the `<Scene />` component. My fallback was to position the floor as well as the trees -1 (meter) on the z-axis.
 
-### [v3 - Forrest](https://github.com/nikgraf/webvr-expriments/tree/master/HelloWorld/v3)
+### [v3 - Forest](https://github.com/nikgraf/webvr-expriments/tree/master/HelloWorld/v3)
 
-<img width="1176" alt="screen shot forrest" src="https://cloud.githubusercontent.com/assets/223045/21510598/a19134da-cc95-11e6-94e5-af9a6279b368.png">
+<img width="1176" alt="screen shot forest" src="https://cloud.githubusercontent.com/assets/223045/21510598/a19134da-cc95-11e6-94e5-af9a6279b368.png">
 
-Next up I wanted to have a more interesting scene as well as explore how I could generate it. I decided to create a forrest. This was pretty much straight forward as I could create a `Forrest` component which uses the `Tree` component multiple times. By adding some randomizers for positioning, height and scale, I ended up with what I envisioned.
+Next up I wanted to have a more interesting scene as well as explore how I could generate it. I decided to create a forest. This was pretty much straight forward as I could create a `Forest` component which uses the `Tree` component multiple times. By adding some randomizers for positioning, height and scale, I ended up with what I envisioned.
 
-Forrest component:
+Forest component:
 ```jsx
 export default ({ style }) => (
   <View style={style}>
@@ -84,7 +84,7 @@ export default ({ style }) => (
 );
 ```
 
-Right now 100 trees are generated and the user is placed at the center of the forrest. Trying it with 1000 trees, led to a laggy experience (MacBook 13", Chrome Canary).
+Right now 100 trees are generated and the user is placed at the center of the forest. Trying it with 1000 trees, led to a laggy experience (MacBook 13", Chrome Canary).
 
 What bothered me a bit was that for each Tree a fetch request was fired. I was hoping that ReactVR would cache the geometry and material.
 
