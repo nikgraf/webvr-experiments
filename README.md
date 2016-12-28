@@ -23,7 +23,7 @@ Or check out the hosted [live demo of HelloWorld v3](https://nikgraf.github.io/w
 
 With this example I tried to explore how to create my own geometries and rendering it within ReactVR. I evaluated a couple of tools and in the end decided to go with [Blender](https://www.blender.org/). I'm still struggling a bit with the interface, but Blender is open source and has probably all the advanced features I need for the next couple of years.
 
-In Blender I created a cube, removed the light and camera, added a material, exported the scene to the Wavefront `.obj` (geometry) and `.mtl` (material) format. Then learned that Three.js failed to render my simple cube properly as soon as I create a `<Mesh source={{ mesh: asset('cube.obj'), mtl: asset('cube.mtl'), lit: true }} />` due some issues with the material definitions. What worked for me was to remove all the gimmick features from the material and reduce it to `Diffuse` & `Specular` lighting. I unchecked all other checkboxes for the material. This is not a Blender only issue, as I encountered similar issues once I gave other tools a try.
+In Blender I created a cube, removed the light and camera, added a material to color the cube's surfaces, exported the scene to the Wavefront `.obj` (geometry) and `.mtl` (material) format. Then learned that Three.js failed to render my simple cube properly as soon as I create a `<Mesh source={{ mesh: asset('cube.obj'), mtl: asset('cube.mtl'), lit: true }} />` due some issues with the material definitions. What worked for me was to remove all the gimmick features from the material and reduce it to `Diffuse` & `Specular` lighting. I unchecked all other checkboxes for the material. This is not a Blender only issue, as I encountered similar issues once I gave other tools a try.
 
 <img width="930" alt="cube setup in blender" src="https://cloud.githubusercontent.com/assets/223045/21511170/57abd1ec-cc9d-11e6-901d-e79958bfe1b3.png">
 
@@ -31,7 +31,7 @@ In Blender I created a cube, removed the light and camera, added a material, exp
 
 <img width="1176" alt="screen shot tree" src="https://cloud.githubusercontent.com/assets/223045/21510600/a1920982-cc95-11e6-8896-b5c963479a86.png">
 
-The goal of this stage was to create a `Tree` component. I created two geometries (tree-crown, tree-trunk) and placed them in my `World` component. After some positioning I could extract both into a `Tree` component. This allowed me to create a second one and place it next to the first one.
+The goal of this stage was to create a `Tree` component. I created two geometries (tree-crown, tree-trunk) and placed them in my `World` component. After some positioning I was able to extract both into a `Tree` component. This allowed me to create a second one and place it next to the first one.
 
 <img width="400" alt="screen shot 2016-12-28 at 01 33 52" src="https://cloud.githubusercontent.com/assets/223045/21511213/eba9c214-cc9d-11e6-99ae-17b5dda0dd85.png">
 <img width="400" alt="screen shot 2016-12-28 at 01 35 03" src="https://cloud.githubusercontent.com/assets/223045/21511215/ee653722-cc9d-11e6-8352-bd93b19a83d6.png">
@@ -52,7 +52,7 @@ export default ({ style }) => (
 );
 ```
 
-In addition I generated a plane geometry in Blender as floor. For the sky I generated a blue gradient image and used it in a `<Pano />` component.
+In addition to that I generated a plane geometry in Blender as floor element. For the sky I generated a blue gradient image and used it in a `<Pano />` component.
 
 Initially I planned to place the scenic camera around one meter above the ground, but discovered a [bug](https://github.com/facebookincubator/react-vr/issues/33) with the `<Scene />` component. My fallback was to position the floor as well as the trees -1 (meter) on the z-axis.
 
