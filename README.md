@@ -4,7 +4,7 @@ A collection of ReactVR experiments (potentially A-Frame and WebVR using ReasonM
 
 ## Hello World (ReactVR)
 
-This is an experience report/guide to explore ReactVR. Keep in mind I had some basic knowledge in 3D-modeling as well as computer graphics beforehand. Please ping me on Twitter in case you have questions or I take things for granted you have a hard time to wrap your mind around. I'm planning to write a longer getting started guide. I highly recommend to read the full [ReactVR docs](https://facebookincubator.github.io/react-vr/docs/getting-started.html). I did as well :)
+This is an experience report/guide to explore ReactVR. Keep in mind I had some basic knowledge in 3D-modeling as well as computer graphics beforehand. Please ping me on Twitter in case you have questions or I take things for granted you have a hard time wrapping your head around. I also highly recommend to read the full [ReactVR docs](https://facebookincubator.github.io/react-vr/docs/getting-started.html). I did as well :)
 
 To try out the examples run
 
@@ -21,7 +21,7 @@ Or check out the hosted [live demo of HelloWorld v3](https://nikgraf.github.io/w
 
 <img width="1176" alt="screen shot cube" src="https://cloud.githubusercontent.com/assets/223045/21510601/a1957270-cc95-11e6-9e73-42f82339f76e.png">
 
-With this example I tried to explore how to create my own geometries and rendering it within ReactVR. I evaluated a couple tools and in the end decided to go with [Blender](https://www.blender.org/). I still struggle a bit with the interface, but Blender is open source and has probably all the advanced features I need for the next couple years.
+With this example I tried to explore how to create my own geometries and rendering it within ReactVR. I evaluated a couple of tools and in the end decided to go with [Blender](https://www.blender.org/). I'm still struggling a bit with the interface, but Blender is open source and has probably all the advanced features I need for the next couple of years.
 
 In Blender I created a cube, removed the light and camera, added a material, exported the scene to the Wavefront `.obj` (geometry) and `.mtl` (material) format. Then learned that Three.js failed to render my simple cube properly as soon as I create a `<Mesh source={{ mesh: asset('cube.obj'), mtl: asset('cube.mtl'), lit: true }} />` due some issues with the material definitions. What worked for me was to remove all the gimmick features from the material and reduce it to `Diffuse` & `Specular` lighting. I unchecked all other checkboxes for the material. This is not a Blender only issue, as I encountered similar issues once I gave other tools a try.
 
