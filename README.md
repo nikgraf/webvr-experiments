@@ -21,15 +21,34 @@ npm start
 
 With this example I tried to explore how to create my own geometries and rendering it within ReactVR. I evaluated a couple tools and in the end decided to go with [Blender](https://www.blender.org/). I still struggle a bit with the interface, but Blender is open source and has probably all the advanced features I need for the next couple years.
 
-In Blender I created a cube, removed the light and camera, added a material, exported the scene and then learned that Three.js failed to render my simple cube properly as soon as I create a `<Mesh />`. What worked for me was to remove all the gimmick from the material and reduce it to `Diffuse` & `Specular` lighting. I unchecked all other checkboxes for the material. I had similar issues in the other tools I used.
+In Blender I created a cube, removed the light and camera, added a material, exported the scene to the Wavefront `.obj` (geometry) and `.mtl` (material) format. Then learned that Three.js failed to render my simple cube properly as soon as I create a `<Mesh source={{ mesh: asset('cube.obj'), mtl: asset('cube.mtl'), lit: true }} />` due some issues with the material definitions. What worked for me was to remove all the gimmick features from the material and reduce it to `Diffuse` & `Specular` lighting. I unchecked all other checkboxes for the material. This is not a Blender only issue, as I encountered similar issues once I gave other tools a try.
 
-<img width="220" alt="material setup" src="https://cloud.githubusercontent.com/assets/223045/21510599/a19189ee-cc95-11e6-912c-64eaf0c4f1ee.png">
+<img width="930" alt="cube setup in blender" src="https://cloud.githubusercontent.com/assets/223045/21511170/57abd1ec-cc9d-11e6-901d-e79958bfe1b3.png">
 
 ### [v2 - Tree (first custom component)](https://github.com/nikgraf/webvr-expriments/tree/master/HelloWorld/v2)
 
 <img width="1176" alt="screen shot tree" src="https://cloud.githubusercontent.com/assets/223045/21510600/a1920982-cc95-11e6-8896-b5c963479a86.png">
 
 The goal of this stage was to create a `Tree` component. I created two geometries (tree-crown, tree-trunk) and placed them in my `World` component. After some positioning I could extract both into a `Tree` component. This allowed me to create a second one and place it next to the first one.
+
+<img width="400" alt="screen shot 2016-12-28 at 01 33 52" src="https://cloud.githubusercontent.com/assets/223045/21511213/eba9c214-cc9d-11e6-99ae-17b5dda0dd85.png">
+<img width="400" alt="screen shot 2016-12-28 at 01 35 03" src="https://cloud.githubusercontent.com/assets/223045/21511215/ee653722-cc9d-11e6-8352-bd93b19a83d6.png">
+
+Tree component:
+```jsx
+export default ({ style }) => (
+  <View style={style}>
+    <Mesh
+      source={{ mesh: asset('tree-trunk.obj'), mtl: asset('tree-trunk.mtl'), lit: true }}
+      style={{ transform: [{scale: [0.6, 1, 0.6]}] }}
+    />
+    <Mesh
+      source={{ mesh: asset('tree-crown.obj'), mtl: asset('tree-crown.mtl'), lit: true }}
+      style={{ transform: [{translate: [0, 2.5, 0]}] }}
+    />
+  </View>
+);
+```
 
 In addition I generated a plane geometry in Blender as floor. For the sky I generated a blue gradient image and used it in a `<Pano />` component.
 
@@ -40,6 +59,28 @@ Initially I planned to place the scenic camera around 1 meter above the ground, 
 <img width="1176" alt="screen shot forrest" src="https://cloud.githubusercontent.com/assets/223045/21510598/a19134da-cc95-11e6-94e5-af9a6279b368.png">
 
 Next up I wanted to have a more interesting scene as well as exploring how I could generate it. I decided to create a forrest. This was pretty much straight forward as I could create a `Forrest` component which uses the `Tree` component multiple times. By adding some randomizers for positioning, height and scale, I ended up with what I envisioned.
+
+Forrest component:
+```jsx
+export default ({ style }) => (
+  <View style={style}>
+    {trees.map((tree) => {
+      const scale = randomScale();
+      return (
+        <Tree
+          key={tree.id}
+          style={{
+            transform: [
+              {scale: [scale, scale, scale]},
+              {translate: [tree.x, randomHeight(), tree.y]},
+            ]
+          }}
+        />
+      );
+    })}
+  </View>
+);
+```
 
 Right now 100 trees are generated and the user is placed at the center of the forrest. I tried with 1000, but this led to a laggy experience (MacBook 13", Chrome Canary).
 
