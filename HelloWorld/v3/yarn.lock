@@ -1187,6 +1187,10 @@ dateformat@^1.0.11:
     get-stdin "^4.0.1"
     meow "^3.3.0"
 
+dateformat@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-2.0.0.tgz#2743e3abb5c3fc2462e527dca445e04e9f4dee17"
+
 debug@2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.3.3.tgz#40c453e67e6e13c901ddec317af8986cda9eff8c"
@@ -1194,8 +1198,8 @@ debug@2.3.3:
     ms "0.7.2"
 
 debug@^2.0.0, debug@^2.1.0, debug@^2.1.1, debug@^2.2.0:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.5.2.tgz#50c295a53dbf1657146e0c1b21307275e90d49cb"
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.0.tgz#bc596bcabe7617f11d9fa15361eded5608b8499b"
   dependencies:
     ms "0.7.2"
 
@@ -1340,11 +1344,7 @@ dom-walk@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/dom-walk/-/dom-walk-0.1.1.tgz#672226dc74c8f799ad35307df936aba11acd6018"
 
-domelementtype@1:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/domelementtype/-/domelementtype-1.3.0.tgz#b17aed82e8ab59e52dd9c19b1756e0fc187204c2"
-
-domelementtype@~1.1.1:
+domelementtype@1, domelementtype@~1.1.1:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/domelementtype/-/domelementtype-1.1.3.tgz#bd28773e2642881aec51544924299c5cd822185b"
 
@@ -1566,15 +1566,15 @@ extglob@^0.3.1:
     is-extglob "^1.0.0"
 
 fancy-log@^1.1.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/fancy-log/-/fancy-log-1.2.0.tgz#d5a51b53e9ab22ca07d558f2b67ae55fdb5fcbd8"
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/fancy-log/-/fancy-log-1.3.0.tgz#45be17d02bb9917d60ccffd4995c999e6c8c9948"
   dependencies:
     chalk "^1.1.1"
     time-stamp "^1.0.0"
 
 fast-levenshtein@~2.0.4:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.5.tgz#bd33145744519ab1c36c3ee9f31f08e9079b67f2"
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
 
 fb-watchman@^1.8.0, fb-watchman@^1.9.0:
   version "1.9.0"
@@ -1902,14 +1902,14 @@ gulp-sourcemaps@1.6.0:
     vinyl "^1.0.0"
 
 gulp-util@^3.0.1, gulp-util@^3.0.4:
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.7.tgz#78925c4b8f8b49005ac01a011c557e6218941cbb"
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
     array-differ "^1.0.0"
     array-uniq "^1.0.2"
     beeper "^1.0.0"
     chalk "^1.0.0"
-    dateformat "^1.0.11"
+    dateformat "^2.0.0"
     fancy-log "^1.1.0"
     gulplog "^1.0.0"
     has-gulplog "^0.1.0"
@@ -2881,8 +2881,8 @@ ovr-audio@~0.1.0:
     three "~0.80.1"
 
 ovrui@~0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/ovrui/-/ovrui-0.1.0.tgz#8a2508b931123a8e4ddaa7900ed8a4d3ffc9579b"
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/ovrui/-/ovrui-0.1.1.tgz#9f6536473d592ee36861437585f6016dd14ba7d0"
   dependencies:
     three "~0.80.1"
 
@@ -3030,6 +3030,10 @@ qs@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-4.0.0.tgz#c31d9b74ec27df75e543a86c78728ed8d4623607"
 
+ramda@^0.22.1:
+  version "0.22.1"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.22.1.tgz#031da0c3df417c5b33c96234757eb37033f36a0e"
+
 random-bytes@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/random-bytes/-/random-bytes-1.0.0.tgz#4f68a1dc0ae58bd3fb95848c30324db75d64360b"
@@ -3166,15 +3170,15 @@ react-transform-hmr@^1.0.4:
     react-proxy "^1.1.7"
 
 react-vr-web@~0.1.0:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/react-vr-web/-/react-vr-web-0.1.1.tgz#fac4a74f1cd112ae9b2e45097539c957908ea473"
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-vr-web/-/react-vr-web-0.1.2.tgz#39a251c126db4a6df418c3865f2ecb5364767a02"
   dependencies:
     ovr-audio "~0.1.0"
     ovrui "~0.1.0"
 
 react-vr@~0.1.0:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/react-vr/-/react-vr-0.1.1.tgz#61000cc8686f5212b5e8efb8a5eb0f1ab487ef72"
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-vr/-/react-vr-0.1.2.tgz#7b67f8472bccc03d7c16fb4be3d71685d573178d"
 
 react@15.3.2:
   version "15.3.2"
@@ -3747,8 +3751,8 @@ time-stamp@^1.0.0:
   resolved "https://registry.yarnpkg.com/time-stamp/-/time-stamp-1.0.1.tgz#9f4bd23559c9365966f3302dbba2b07c6b99b151"
 
 timed-out@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/timed-out/-/timed-out-3.1.0.tgz#43b98b14bb712c9161c28f4dc1f3068d67a04ec2"
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/timed-out/-/timed-out-3.1.3.tgz#95860bfcc5c76c277f8f8326fd0f5b2e20eba217"
 
 tmpl@1.0.x:
   version "1.0.4"
