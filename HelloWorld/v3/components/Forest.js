@@ -13,7 +13,7 @@ const randomScale = () => (Math.random() * 0.25 + 1);
 
 const grid = xprod(range(0, 10), range(0, 10));
 const trees = grid.map((entry, index) => {
-  return { x: entry[0] * 8 + randomPosition(), y: entry[1] * 8 + randomPosition(), index };
+  return { x: entry[0] * 8 + randomPosition(), y: entry[1] * 8 + randomPosition(), id: index };
 });
 
 export default ({ style }) => (
@@ -22,7 +22,7 @@ export default ({ style }) => (
       const scale = randomScale();
       return (
         <Tree
-          key={tree.index}
+          key={tree.id}
           style={{
             transform: [
               {scale: [scale, scale, scale]},

@@ -11,7 +11,7 @@ import {
   AmbientLight,
   DirectionalLight,
 } from 'react-vr';
-import Forrest from './components/Forrest';
+import Forest from './components/Forest';
 
 class World extends Component {
   render() {
@@ -27,7 +27,7 @@ class World extends Component {
           style={{ transform:[{translate : [0, -600, -300]}]}}
         />
         <Pano source={asset('heaven.png')}/>
-        <Forrest
+        <Forest
           style={{
             transform: [
               {translate: [-35, -1, -35]},
