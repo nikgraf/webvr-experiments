@@ -87,7 +87,7 @@ export default ({ style }) => (
 );
 ```
 
-Right now 100 trees are generated and the user is placed at the center of the forest. Trying it with 1000 trees, led to a laggy experience (MacBook 13", Chrome Canary).
+Right now 100 trees are generated and the user is placed at the center of the forest. ~~Trying it with 1000 trees, led to a laggy experience (MacBook 13", Chrome Canary).~~ ReactVR 0.1.2 shipped with .obj fetch and parse caching. 1000 trees are still a smooth experience 🙌.
 
 What bothered me a bit was that for each Tree a fetch request was fired. I was hoping that ReactVR would cache the geometry and material.
 
