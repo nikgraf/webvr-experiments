@@ -1,5 +1,8 @@
 import React from 'react'
-import { Animated } from 'react-vr'
+import { asset, Animated, Mesh, Text, View } from 'react-vr'
+import Tree from './Tree'
+
+const AnimatedTree = Animated.createAnimatedComponent(Tree);
 
 export default class Playground extends React.Component {
   constructor(props) {
@@ -22,18 +25,33 @@ export default class Playground extends React.Component {
 
   render() {
     return (
-      <Animated.Image                         // Base: Image, Text, View
-        source={{uri: 'http://i.imgur.com/XMKOH81.jpg'}}
+      <Animated.View
         style={{
-          flex: 1,
-          width: 1,
-          height: 1,
           transform: [
             {scale: this.state.bounceValue},
             {translate: [0, 0, -6]}
           ]
         }}
-      />
+      >
+        <Text>
+          First part and
+        </Text>
+        <AnimatedTree />
+        <View>
+          <Mesh
+            source={{
+              mesh: asset('tree-trunk.obj'),
+              mtl: asset('tree-trunk.mtl'),
+              lit: true
+            }}
+            style={{
+              transform: [
+                {translate: [0, 2.5, 0]},
+              ]
+            }}
+          />
+        </View>
+      </Animated.View>
     );
   }
 }
