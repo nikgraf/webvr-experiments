@@ -1,5 +1,5 @@
 import React from 'react'
-import { asset, Animated, Mesh, Text, View } from 'react-vr'
+import { asset, Animated, Mesh, Text, View, Image } from 'react-vr'
 import Tree from './Tree'
 
 const AnimatedTree = Animated.createAnimatedComponent(Tree);
@@ -8,19 +8,18 @@ export default class Playground extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      bounceValue: new Animated.Value(0),
+      translateValue: new Animated.Value(0),
     };
   }
 
   componentDidMount() {
-    this.state.bounceValue.setValue(1.5);     // Start large
-    Animated.spring(                          // Base: spring, decay, timing
-      this.state.bounceValue,                 // Animate `bounceValue`
+    Animated.timing(
+      this.state.translateValue,
       {
-        toValue: 0.8,                         // Animate to smaller size
-        friction: 1,                          // Bouncier spring
+        duration: 3000,
+        toValue: 10,
       }
-    ).start();                                // Start the animation
+    ).start();
   }
 
   render() {
@@ -28,29 +27,13 @@ export default class Playground extends React.Component {
       <Animated.View
         style={{
           transform: [
-            {scale: this.state.bounceValue},
-            {translate: [0, 0, -6]}
+            {scale: 1},
+            {translate: [-5, -2, -6]},
+            {translateX: this.state.translateValue},
           ]
         }}
       >
-        <Text>
-          First part and
-        </Text>
         <AnimatedTree />
-        <View>
-          <Mesh
-            source={{
-              mesh: asset('tree-trunk.obj'),
-              mtl: asset('tree-trunk.mtl'),
-              lit: true
-            }}
-            style={{
-              transform: [
-                {translate: [0, 2.5, 0]},
-              ]
-            }}
-          />
-        </View>
       </Animated.View>
     );
   }
