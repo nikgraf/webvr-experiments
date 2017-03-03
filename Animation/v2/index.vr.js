@@ -10,9 +10,10 @@ import {
   View,
 } from 'react-vr';
 import World from './components/World';
-import Tree from './components/Tree';
+import Asteroid01 from './components/Asteroid01';
+import Cockpit from './components/Cockpit';
+
 const AnimatedWorld = Animated.createAnimatedComponent(World);
-const AnimatedTree = Animated.createAnimatedComponent(Tree);
 
 class v1 extends React.Component {
   constructor(props) {
@@ -32,21 +33,53 @@ class v1 extends React.Component {
         toValue: -10,
       }
     ).start();
+
+    this.initKeys();
+  }
+
+  initKeys = () => {
+    // window.addEventListener('keyup', (event) => {
+    //   console.log('event');
+    // });
   }
 
   render() {
     return (
       <View>
         <AmbientLight intensity={0.85} />
-        {/* this basically is the ship */}
-        <Tree
+
+        <Pano source={
+          {
+            uri: [
+              '../static_assets/space/space_right.png',
+              '../static_assets/space/space_left.png',
+              '../static_assets/space/space_up.png',
+              '../static_assets/space/space_down.png',
+              '../static_assets/space/space_back.png',
+              '../static_assets/space/space_front.png'
+            ]
+          }
+        }/>
+
+        <Asteroid01
           style={{
             transform: [
-              {scale: 1},
-              {translate: [0, -4, -1]},
+              {scale: 0.5},
+              {translate: [0, 0, -30]},
             ]
           }}
         />
+
+        {/* this basically is the ship */}
+        <Cockpit
+          style={{
+            transform: [
+              {scale: 1},
+              {translate: [0, 0, 0]},
+            ]
+          }}
+        />
+
         <Animated.View
           style={{
             transform: [

@@ -1,0 +1,244 @@
+newmtl bodySG
+illum 4
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0 0.0 0.0
+Ke 0 0 0
+map_Kd cockpit_01.jpg
+#Kd 0.00 0.00 0.00
+#Ka 0.59 0.59 0.59
+#Tf 1.00 1.00 1.00
+#map_Kd cockpit_01.jpg
+#Ni 1.00
+#Ks 0.00 0.00 0.00
+#Ns -0.93
+
+newmtl chair_01SG
+illum 4
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0 0.0 0.0
+Ke 0 0 0
+map_Kd cockpit_01.jpg
+#Kd 0.00 0.00 0.00
+#Ka 0.59 0.59 0.59
+#Tf 1.00 1.00 1.00
+#map_Kd cockpit_01.jpg
+#Ni 1.00
+#Ks 0.00 0.00 0.00
+#Ns -0.93
+
+newmtl chair_02SG
+illum 4
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0 0.0 0.0
+Ke 0 0 0
+map_Kd cockpit_01.jpg
+#Kd 0.00 0.00 0.00
+#Ka 0.59 0.59 0.59
+#Tf 1.00 1.00 1.00
+#map_Kd cockpit_01.jpg
+#Ni 1.00
+#Ks 0.00 0.00 0.00
+#Ns -0.93
+
+newmtl display_01SG
+illum 4
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0 0.0 0.0
+Ke 0 0 0
+map_Kd cockpit_01.jpg
+#Kd 0.00 0.00 0.00
+#Ka 0.59 0.59 0.59
+#Tf 1.00 1.00 1.00
+#map_Kd cockpit_01.jpg
+#Ni 1.00
+#Ks 0.00 0.00 0.00
+#Ns -0.93
+
+newmtl display_02SG
+illum 4
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0 0.0 0.0
+Ke 0 0 0
+map_Kd cockpit_01.jpg
+#Kd 0.00 0.00 0.00
+#Ka 0.59 0.59 0.59
+#Tf 1.00 1.00 1.00
+#map_Kd cockpit_01.jpg
+#Ni 1.00
+#Ks 0.00 0.00 0.00
+#Ns -0.93
+
+newmtl display_03SG
+illum 4
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0 0.0 0.0
+Ke 0 0 0
+map_Kd cockpit_01.jpg
+#Kd 0.00 0.00 0.00
+#Ka 0.59 0.59 0.59
+#Tf 1.00 1.00 1.00
+#map_Kd cockpit_01.jpg
+#Ni 1.00
+#Ks 0.00 0.00 0.00
+#Ns -0.93
+
+newmtl display_04SG
+illum 4
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0 0.0 0.0
+Ke 0 0 0
+map_Kd cockpit_01.jpg
+#Kd 0.00 0.00 0.00
+#Ka 0.59 0.59 0.59
+#Tf 1.00 1.00 1.00
+#map_Kd cockpit_01.jpg
+#Ni 1.00
+#Ks 0.00 0.00 0.00
+#Ns -0.93
+
+newmtl display_05SG
+illum 4
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0 0.0 0.0
+Ke 0 0 0
+map_Kd cockpit_01.jpg
+#Kd 0.00 0.00 0.00
+#Ka 0.59 0.59 0.59
+#Tf 1.00 1.00 1.00
+#map_Kd cockpit_01.jpg
+#Ni 1.00
+#Ks 0.00 0.00 0.00
+#Ns -0.93
+
+newmtl display_06SG
+illum 4
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0 0.0 0.0
+Ke 0 0 0
+map_Kd cockpit_01.jpg
+#Kd 0.00 0.00 0.00
+#Ka 0.59 0.59 0.59
+#Tf 1.00 1.00 1.00
+#map_Kd cockpit_01.jpg
+#Ni 1.00
+#Ks 0.00 0.00 0.00
+#Ns -0.93
+
+newmtl glassSG
+d 0.2500 # transparency of the glass
+illum 4
+Kd 0.17 0.24 0.29
+Ka 0.17 0.24 0.29
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns -0.93
+
+newmtl screen_01SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.59 0.59 0.59
+Tf 1.00 1.00 1.00
+map_Kd screen.tga
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+
+newmtl screen_02SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.59 0.59 0.59
+Tf 1.00 1.00 1.00
+map_Kd screen.tga
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+
+newmtl screen_03SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.59 0.59 0.59
+Tf 1.00 1.00 1.00
+map_Kd screen.tga
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+
+newmtl screen_04SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.59 0.59 0.59
+Tf 1.00 1.00 1.00
+map_Kd screen.tga
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+
+newmtl screen_05SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.59 0.59 0.59
+Tf 1.00 1.00 1.00
+map_Kd screen.tga
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+
+newmtl screen_06SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.59 0.59 0.59
+Tf 1.00 1.00 1.00
+map_Kd screen.tga
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+
+newmtl screen_07SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.59 0.59 0.59
+Tf 1.00 1.00 1.00
+map_Kd screen.tga
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+
+newmtl screen_08SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.59 0.59 0.59
+Tf 1.00 1.00 1.00
+map_Kd screen.tga
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+
+newmtl screen_09SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.59 0.59 0.59
+Tf 1.00 1.00 1.00
+map_Kd screen.tga
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+
+newmtl screen_10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.59 0.59 0.59
+Tf 1.00 1.00 1.00
+map_Kd screen.tga
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
