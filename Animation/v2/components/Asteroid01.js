@@ -4,35 +4,35 @@ import {
   asset,
   Mesh,
   View,
-  Easing,
 } from 'react-vr';
-
-console.log('easing', Easing)
+import Easing from 'Easing';
 
 export default class Asteroid01 extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      rotation: new Animated.Value(0),
+      rotationX: new Animated.Value(0),
+      rotationY: new Animated.Value(0),
     };
   }
 
-  startAnimation = (value) => {
+  startAnimation = (valueReference, startValue, addition) => {
     Animated.timing(
-      this.state.rotation,
+      valueReference,
       {
         duration: 10000,
-        toValue: value,
-        easing: Easing.linear(),
+        toValue: startValue + addition,
+        easing: Easing.linear,
       }
     ).start(() => {
-      this.startAnimation(value + value);
+      this.startAnimation(valueReference, startValue + addition, 360);
     });
   }
 
   componentDidMount() {
-    this.startAnimation(360);
+    this.startAnimation(this.state.rotationX, 0, 360);
+    this.startAnimation(this.state.rotationY, 0, 180);
   }
 
   render() {
@@ -42,9 +42,8 @@ export default class Asteroid01 extends React.Component {
         <Animated.View
           style={{
             transform: [
-              {rotateY: this.state.rotation},
-              // {rotateX: this.state.rotation / 3},
-              // {rotateZ: this.state.rotation / 2}
+              {rotateX: this.state.rotationX},
+              {rotateY: this.state.rotationY},
             ]
           }}
         >
