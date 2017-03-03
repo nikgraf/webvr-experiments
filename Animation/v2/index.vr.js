@@ -21,7 +21,7 @@ class v1 extends React.Component {
     this.state = {
       x: new Animated.Value(0),
       y: new Animated.Value(0),
-      z: new Animated.Value(0),
+      z: new Animated.Value(-28),
     };
   }
 
@@ -29,8 +29,8 @@ class v1 extends React.Component {
     Animated.timing(
       this.state.z,
       {
-        duration: 3000,
-        toValue: -10,
+        duration: 10000,
+        toValue: 0,
       }
     ).start();
   }
@@ -39,7 +39,6 @@ class v1 extends React.Component {
     return (
       <View>
         <AmbientLight intensity={0.85} />
-
         <Pano source={
           {
             uri: [
@@ -52,7 +51,6 @@ class v1 extends React.Component {
             ]
           }
         }/>
-
         <Cockpit
           style={{
             transform: [
@@ -61,11 +59,9 @@ class v1 extends React.Component {
             ]
           }}
         />
-
         <Animated.View
           style={{
             transform: [
-              {scale: 1},
               {translateX: this.state.x},
               {translateY: this.state.y},
               {translateZ: this.state.z},
