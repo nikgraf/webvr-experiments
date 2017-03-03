@@ -33,14 +33,6 @@ class v1 extends React.Component {
         toValue: -10,
       }
     ).start();
-
-    this.initKeys();
-  }
-
-  initKeys = () => {
-    // window.addEventListener('keyup', (event) => {
-    //   console.log('event');
-    // });
   }
 
   render() {
@@ -61,21 +53,11 @@ class v1 extends React.Component {
           }
         }/>
 
-        <Asteroid01
-          style={{
-            transform: [
-              {scale: 0.5},
-              {translate: [0, 0, -30]},
-            ]
-          }}
-        />
-
-        {/* this basically is the ship */}
         <Cockpit
           style={{
             transform: [
               {scale: 1},
-              {translate: [0, 0, 0]},
+              {translate: [0, 0, 1]},
             ]
           }}
         />
