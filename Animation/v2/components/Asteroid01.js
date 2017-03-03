@@ -1,60 +1,62 @@
 import React from 'react';
 import {
+  Animated,
   asset,
   Mesh,
   View,
+  Easing,
 } from 'react-vr';
 
-export default class Asteroid01 extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      rotation: 130,
-    };
-    this.lastUpdate = Date.now();
+console.log('easing', Easing)
 
-    this.rotate = this.rotate.bind(this);
+export default class Asteroid01 extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      rotation: new Animated.Value(0),
+    };
+  }
+
+  startAnimation = (value) => {
+    Animated.timing(
+      this.state.rotation,
+      {
+        duration: 10000,
+        toValue: value,
+        easing: Easing.linear(),
+      }
+    ).start(() => {
+      this.startAnimation(value + value);
+    });
   }
 
   componentDidMount() {
-    this.rotate();
-  }
-
-  componentWillUnmount() {
-    if (this.frameHandle) {
-      cancelAnimationFrame(this.frameHandle);
-      this.frameHandle = null;
-    }
-  }
-
-  rotate() {
-    const now = Date.now();
-    const delta = now - this.lastUpdate;
-    this.lastUpdate = now;
-
-    this.setState({
-        rotation: this.state.rotation + delta / 150
-    });
-    this.frameHandle = requestAnimationFrame(this.rotate);
+    this.startAnimation(360);
   }
 
   render() {
     const { style } = this.props;
     return (
-      <View
-        style={style}
-      >
-        <Mesh
+      <View style={style}>
+        <Animated.View
           style={{
             transform: [
-              {scale: [0.6, 0.6, 0.6]},
               {rotateY: this.state.rotation},
-              {rotateX: this.state.rotation / 3},
-              {rotateZ: this.state.rotation / 2}
+              // {rotateX: this.state.rotation / 3},
+              // {rotateZ: this.state.rotation / 2}
             ]
           }}
-          source={{ mesh: asset('asteroids/asteroid01.obj'), mtl: asset('asteroids/asteroid01.mtl'), lit: true }}
-        />
+        >
+          <Mesh
+            style={{
+              transform: [
+                {scale: [0.6, 0.6, 0.6]},
+              ]
+            }}
+            source={{ mesh: asset('asteroids/asteroid01.obj'), mtl: asset('asteroids/asteroid01.mtl'), lit: true }}
+          />
+        </Animated.View>
       </View>
     );
   }
