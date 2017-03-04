@@ -26,13 +26,15 @@ class v1 extends React.Component {
   }
 
   componentDidMount() {
-    Animated.timing(
-      this.state.z,
-      {
-        duration: 10000,
-        toValue: 0,
-      }
-    ).start();
+    setTimeout(() => {
+      Animated.timing(
+        this.state.z,
+        {
+          duration: 10000,
+          toValue: 2,
+        }
+      ).start();
+    }, 5000);
   }
 
   render() {

@@ -134,7 +134,7 @@ map_Kd cockpit_01.jpg
 #Ns -0.93
 
 newmtl glassSG
-d 0.2500 # transparency of the glass
+d 0.2000 # transparency of the glass
 illum 4
 Kd 0.17 0.24 0.29
 Ka 0.17 0.24 0.29
