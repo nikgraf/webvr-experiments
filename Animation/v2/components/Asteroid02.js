@@ -26,7 +26,7 @@ export default class Asteroid02 extends React.Component {
         easing: Easing.linear,
       }
     ).start(() => {
-      this.startAnimation(valueReference, startValue + addition, 360);
+      this.startAnimation(valueReference, startValue + addition, addition);
     });
   }
 

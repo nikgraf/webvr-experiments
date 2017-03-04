@@ -21,12 +21,12 @@ export default class Asteroid01 extends React.Component {
     Animated.timing(
       valueReference,
       {
-        duration: 10000,
+        duration: 20000,
         toValue: startValue + addition,
         easing: Easing.linear,
       }
     ).start(() => {
-      this.startAnimation(valueReference, startValue + addition, 360);
+      this.startAnimation(valueReference, startValue + addition, addition);
     });
   }
 

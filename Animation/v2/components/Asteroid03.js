@@ -26,13 +26,13 @@ export default class Asteroid03 extends React.Component {
         easing: Easing.linear,
       }
     ).start(() => {
-      this.startAnimation(valueReference, startValue + addition, 360);
+      this.startAnimation(valueReference, startValue + addition, addition);
     });
   }
 
   componentDidMount() {
-    this.startAnimation(this.state.rotationX, 0, 360);
-    this.startAnimation(this.state.rotationZ, 0, 120);
+    this.startAnimation(this.state.rotationX, 0, 140);
+    this.startAnimation(this.state.rotationZ, 0, 240);
   }
 
   render() {
