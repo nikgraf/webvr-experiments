@@ -4,15 +4,23 @@
 
 // Auto-generated content.
 import { VRInstance } from 'react-vr-web';
+import * as THREE from 'three';
 
 function init(bundle, parent, options) {
+  // const camera = new THREE.PerspectiveCamera(60, 30, 0.01, 10000.0);
   const vr = new VRInstance(bundle, 'v1', parent, {
     // Add custom options here
+    // camera,
+    cursorVisibility: 'visible',
     ...options,
   });
 
+  // camera = vr.camera();
+  // window.camera.addEventListener('change', function(e) {
+  //   console.log('camera event', e);
+  // });
   // setInterval(function () {
-  //   console.log('camera?', vr.player.camera.getWorldDirection());
+  //   console.log('camera?', vr.camera().getWorldDirection());
   // }, 1000);
 
   vr.render = function() {
