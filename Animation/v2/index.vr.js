@@ -9,6 +9,7 @@ import {
   Text,
   View,
 } from 'react-vr';
+import Easing from 'Easing';
 import World from './components/World';
 import Asteroid01 from './components/Asteroid01';
 import Cockpit from './components/Cockpit';
@@ -25,16 +26,21 @@ class v1 extends React.Component {
     };
   }
 
+  startAnimation = (valueReference, startValue, addition) => {
+    Animated.timing(
+      valueReference,
+      {
+        duration: 20000,
+        toValue: startValue + addition,
+        easing: Easing.linear,
+      }
+    ).start(() => {
+      this.startAnimation(valueReference, startValue + addition, addition);
+    });
+  }
+
   componentDidMount() {
-    setTimeout(() => {
-      Animated.timing(
-        this.state.z,
-        {
-          duration: 10000,
-          toValue: 2,
-        }
-      ).start();
-    }, 5000);
+    this.startAnimation(this.state.z, -28, 40);
   }
 
   render() {
