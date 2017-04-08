@@ -20,10 +20,6 @@ var config = {
   getPlatforms() {
     return ['vr'];
   },
-
-  getProvidesModuleNodeModules() {
-    return ['react-native', 'react-vr'];
-  },
 };
 
 function getRoots() {
