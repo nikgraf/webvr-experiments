@@ -1,53 +1,55 @@
 import React from 'react';
-import { Animated } from 'react-vr';
+import { Animated, asset } from 'react-vr';
 import Easing from 'easing';
 
 export default class Intro extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      z: new Animated.Value(-3),
       opacity: new Animated.Value(0),
     };
   }
 
   componentDidMount() {
-    Animated.timing(
-      this.state.opacity,
-      {
-        duration: 1000,
-        toValue: 1,
-        delay: 1000,
-        easing: Easing.linear,
-      }
-    ).start();
-
     window.setTimeout(() => {
+      this.state.opacity.setValue(1)
+      Animated.timing(
+        this.state.z,
+        {
+          duration: 7000,
+          toValue: -30,
+          easing: Easing.linear,
+        }
+      ).start();
+
       Animated.timing(
         this.state.opacity,
         {
           duration: 1000,
           toValue: 0,
+          delay: 6000,
+          easing: Easing.linear,
         }
       ).start();
-    }, 6000)
+    }, 8500)
   }
 
   render() {
     return (
-      <Animated.Text
+      <Animated.Image
+        source={{uri: '/static_assets/logo.png'}}
         style={{
-          color: 'rgb(68, 220, 213)',
+          position: 'absolute',
+          width: 2.326,
+          height: 1,
           layoutOrigin: [0.5, 0.5],
-          width: 1.36,
           opacity: this.state.opacity,
           transform: [
-            {translateZ: -1.5},
+            {translateZ: this.state.z}
           ]
         }}
-      >
-        A long time ago in a galaxy far,
-        far away...
-      </Animated.Text>
+      />
     );
   }
 }

@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-vr';
 import Intro from './components/Intro';
+import Logo from './components/Logo';
 import MovingText from './components/MovingText';
 
 const spaceSkymap = [
@@ -25,6 +26,7 @@ export default class World extends React.Component {
     return (
       <View>
         <Pano source={spaceSkymap} />
+        <Logo />
         <Intro />
         <Animated.View
           style={{

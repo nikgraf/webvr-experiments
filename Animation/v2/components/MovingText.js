@@ -3,7 +3,7 @@ import { Animated } from 'react-vr';
 import Easing from 'easing';
 
 const textBaseStyle = {
-  color: 'gold',
+  color: '#FFE81F',
   // textAlign: 'justify', // not supported
   width: 1.255,
 };
@@ -19,6 +19,7 @@ export default class MovingText extends React.Component {
     super(props);
     this.state = {
       y: new Animated.Value(-1.5),
+      opacity: new Animated.Value(0),
     };
   }
 
@@ -26,8 +27,19 @@ export default class MovingText extends React.Component {
     Animated.timing(
       this.state.y,
       {
-        duration: 60000,
+        duration: 150000,
         toValue: 10,
+        delay: 4500,
+        easing: Easing.linear,
+      }
+    ).start();
+
+    Animated.timing(
+      this.state.opacity,
+      {
+        duration: 3000,
+        toValue: 1,
+        delay: 9500,
         easing: Easing.linear,
       }
     ).start();
@@ -38,6 +50,7 @@ export default class MovingText extends React.Component {
       <Animated.View
         style={{
           layoutOrigin: [0.5, 0.5],
+          opacity: this.state.opacity,
           transform: [
             { translate: [0, 0, 0] },
             { translateY: this.state.y },
