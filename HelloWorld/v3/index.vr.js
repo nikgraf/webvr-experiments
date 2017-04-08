@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   AppRegistry,
   asset,
   StyleSheet,
   Pano,
-  Mesh,
   View,
-  Scene,
-  PointLight,
+  Model,
   AmbientLight,
+  PointLight,
   DirectionalLight,
 } from 'react-vr';
 import Forest from './components/Forest';
+import Tree from './components/Tree';
 
-class World extends Component {
+export default class HelloWorld extends React.Component {
   render() {
     return (
       <View>
@@ -34,8 +34,9 @@ class World extends Component {
             ]
           }}
         />
-        <Mesh
-          source={{ mesh: asset('plane.obj'), mtl: asset('plane.mtl'), lit: true }}
+        <Model
+          source={{ obj: asset('plane.obj'), mtl: asset('plane.mtl') }}
+          lit
           style={{
             transform: [
               {scale: [1, 1, 1]},
@@ -48,4 +49,4 @@ class World extends Component {
   }
 };
 
-AppRegistry.registerComponent('hello_world', () => World);
+AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
