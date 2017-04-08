@@ -8,6 +8,7 @@ import {
   Text,
   View,
 } from 'react-vr';
+import Intro from './components/Intro';
 import MovingText from './components/MovingText';
 
 const spaceSkymap = [
@@ -24,6 +25,7 @@ export default class World extends React.Component {
     return (
       <View>
         <Pano source={spaceSkymap} />
+        <Intro />
         <Animated.View
           style={{
             transform: [
