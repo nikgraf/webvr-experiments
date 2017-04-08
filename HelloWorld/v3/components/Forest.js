@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   asset,
-  Mesh,
   View,
 } from 'react-vr';
 import { range, map, xprod, flatten } from 'ramda';
