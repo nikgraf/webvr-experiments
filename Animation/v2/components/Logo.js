@@ -32,7 +32,7 @@ export default class Intro extends React.Component {
           easing: Easing.linear,
         }
       ).start();
-    }, 8500)
+    }, 8800)
   }
 
   render() {

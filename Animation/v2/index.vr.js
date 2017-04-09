@@ -4,8 +4,10 @@ import {
   AppRegistry,
   asset,
   StyleSheet,
+  Image,
   Pano,
   Text,
+  Sound,
   View,
 } from 'react-vr';
 import Intro from './components/Intro';
@@ -22,23 +24,70 @@ const spaceSkymap = [
 ];
 
 export default class World extends React.Component {
+
+  state = {
+    panoLoaded: false,
+    logoLoaded: false,
+  }
+
+  loadedPano = () => { this.setState({ panoLoaded: true }); }
+
+  loadedLogo = () => { this.setState({ logoLoaded: true }); }
+
   render() {
+    const loaded = this.state.panoLoaded && this.state.logoLoaded;
     return (
       <View>
-        <Pano source={spaceSkymap} />
-        <Logo />
-        <Intro />
-        <Animated.View
-          style={{
-            transform: [
-              {rotateX: -60},
-            ]
+        <Sound
+          playStatus={loaded ? 'play' : 'play'}
+          onLoad={() => { console.log('weeeeee'); }}
+          source={{
+            ogg: '/static_assets/song.ogg',
+            mp3: '/static_assets/song.mp3',
           }}
-        >
-          <MovingText />
-        </Animated.View>
+        />
+        <Pano source={spaceSkymap} onLoadEnd={this.loadedPano} />
+        <Image
+          onLoadEnd={this.loadedLogo}
+          source={{uri: '/static_assets/logo.png'}}
+          style={{
+            position: 'absolute',
+            opacity: 0,
+          }}
+        />
+        {!loaded
+          ? (
+            <View>
+              <Text
+                style={{
+                  color: 'rgb(68, 220, 213)',
+                  layoutOrigin: [0.5, 0.5],
+                  transform: [
+                    {translateZ: -1.5},
+                  ]
+                }}
+              >
+                Loading...
+              </Text>
+            </View>
+          ) : (
+            <View>
+              <Logo />
+              <Intro />
+              <Animated.View
+                style={{
+                  transform: [
+                    {rotateX: -60},
+                  ]
+                }}
+              >
+                <MovingText />
+              </Animated.View>
+            </View>
+          )
+        }
       </View>
-    );
+    )
   }
 };
 
