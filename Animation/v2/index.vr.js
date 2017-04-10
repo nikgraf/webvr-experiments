@@ -39,7 +39,7 @@ export default class World extends React.Component {
     return (
       <View>
         <Sound
-          playStatus={loaded ? 'play' : 'play'}
+          playStatus={loaded ? 'play' : 'stop'}
           onLoad={() => { console.log('weeeeee'); }}
           source={{
             ogg: '/static_assets/song.ogg',
