@@ -31,15 +31,17 @@ export default class Island extends React.Component {
         </Text>
         <AmbientLight intensity={0.9} />
         <Plane
-          width={5}
-          height={5}
+          width={500}
+          height={500}
           lit={true}
           style={{
-            backgroundColor: '#00ff00',
+            color: '#0000ff',
             transform: [
               {
-                translateZ: -3,
-                rotateY: 45,
+                translateY: -1,
+              },
+              {
+                rotateX: -90,
               },
             ],
           }}
