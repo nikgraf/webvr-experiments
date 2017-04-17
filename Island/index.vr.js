@@ -1,5 +1,14 @@
 import React from 'react';
-import {AppRegistry, asset, StyleSheet, Pano, Text, View} from 'react-vr';
+import {
+  AmbientLight,
+  AppRegistry,
+  asset,
+  StyleSheet,
+  Pano,
+  Plane,
+  Text,
+  View,
+} from 'react-vr';
 
 export default class Island extends React.Component {
   render() {
@@ -20,6 +29,21 @@ export default class Island extends React.Component {
         >
           hello
         </Text>
+        <AmbientLight intensity={0.9} />
+        <Plane
+          width={5}
+          height={5}
+          lit={true}
+          style={{
+            backgroundColor: '#00ff00',
+            transform: [
+              {
+                translateZ: -3,
+                rotateY: 45,
+              },
+            ],
+          }}
+        />
       </View>
     );
   }
