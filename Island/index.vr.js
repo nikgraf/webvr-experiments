@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  AmbientLight,
   AppRegistry,
   asset,
   DirectionalLight,
@@ -11,11 +12,20 @@ import {
   View,
 } from 'react-vr';
 
+const spaceSkymap = [
+  asset('space/space_right.png'),
+  asset('space/space_left.png'),
+  asset('space/space_up.png'),
+  asset('space/space_down.png'),
+  asset('space/space_back.png'),
+  asset('space/space_front.png'),
+];
+
 export default class Island extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset('chess-world.jpg')} />
+        <Pano source={spaceSkymap} />
         <DirectionalLight
           intensity={0.9}
           style={{
@@ -30,11 +40,11 @@ export default class Island extends React.Component {
             ],
           }}
         />
+        <AmbientLight intensity={0.1} />
         <Plane
           width={500}
           height={500}
           lit={true}
-          wireframe={false}
           style={{
             color: '#0000ff',
             transform: [
@@ -51,7 +61,6 @@ export default class Island extends React.Component {
           widthSegments={20}
           heightSegments={20}
           radius={2.5}
-          wireframe={false}
           lit={true}
           style={{
             color: 'yellow',
@@ -62,7 +71,19 @@ export default class Island extends React.Component {
             ],
           }}
         />
-
+        <Sphere
+          widthSegments={20}
+          heightSegments={20}
+          radius={8}
+          style={{
+            color: '#dbcaac',
+            transform: [
+              {
+                translate: [0, 20, -200],
+              },
+            ],
+          }}
+        />
       </View>
     );
   }
