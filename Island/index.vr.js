@@ -1,11 +1,12 @@
 import React from 'react';
 import {
-  AmbientLight,
   AppRegistry,
   asset,
-  StyleSheet,
+  DirectionalLight,
   Pano,
   Plane,
+  Sphere,
+  StyleSheet,
   Text,
   View,
 } from 'react-vr';
@@ -15,25 +16,25 @@ export default class Island extends React.Component {
     return (
       <View>
         <Pano source={asset('chess-world.jpg')} />
-        <Text
+        <DirectionalLight
+          intensity={0.9}
           style={{
-            backgroundColor: '#777879',
-            fontSize: 0.8,
-            layoutOrigin: [0.5, 0.5],
-            paddingLeft: 0.2,
-            paddingRight: 0.2,
-            textAlign: 'center',
-            textAlignVertical: 'center',
-            transform: [{translate: [0, 0, -3]}],
+            color: '#ddddff',
+            transform: [
+              {
+                translate: [0, 90, 30],
+              },
+              {
+                rotateX: -90,
+              },
+            ],
           }}
-        >
-          hello
-        </Text>
-        <AmbientLight intensity={0.9} />
+        />
         <Plane
           width={500}
           height={500}
           lit={true}
+          wireframe={false}
           style={{
             color: '#0000ff',
             transform: [
@@ -46,6 +47,22 @@ export default class Island extends React.Component {
             ],
           }}
         />
+        <Sphere
+          widthSegments={20}
+          heightSegments={20}
+          radius={2.5}
+          wireframe={false}
+          lit={true}
+          style={{
+            color: 'yellow',
+            transform: [
+              {
+                translateY: -3,
+              },
+            ],
+          }}
+        />
+
       </View>
     );
   }
