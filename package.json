@@ -1,0 +1,29 @@
+{
+  "name": "webvr-expriments",
+  "version": "0.0.0",
+  "description": "A collection of WebVR experiments",
+  "repository": "git@github.com:nikgraf/webvr-expriments.git",
+  "author": "Nik Graf <nik@nikgraf.com>",
+  "license": "MIT",
+  "scripts": {
+    "precommit": "lint-staged",
+    "lint": "eslint ."
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.2",
+    "eslint": "^3.19.0",
+    "eslint-config-prettier": "^1.6.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-react": "^6.10.3",
+    "husky": "^0.13.3",
+    "lint-staged": "^3.4.0",
+    "prettier-eslint": "^5.1.0",
+    "prettier-eslint-cli": "^3.3.0"
+  }
+}
