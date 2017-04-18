@@ -1,0 +1,72 @@
+import React from 'react';
+import {asset, Mesh, View, VrButton, Text} from 'react-vr';
+import Button from './Button';
+
+export default ({
+  style,
+  startMoveLeft,
+  stopMoveLeft,
+  startMoveRight,
+  stopMoveRight,
+}) => (
+  <View style={style}>
+    <View
+      style={{
+        flex: 1,
+        flexDirection: 'row',
+        width: 1,
+        alignItems: 'stretch',
+        transform: [{translate: [0, 1, -2]}],
+      }}
+    >
+      <Button
+        text=""
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0)',
+          width: 0.5,
+          height: 2,
+          transform: [
+            {rotateY: 45},
+            {rotateX: 15},
+            {translate: [-0.9, -0.5, -0.3]},
+          ],
+        }}
+        enterCallback={() => {
+          startMoveLeft();
+        }}
+        exitCallback={() => {
+          stopMoveLeft();
+        }}
+      />
+      <Button
+        text=""
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0)',
+          width: 0.5,
+          transform: [
+            {rotateY: -45},
+            {rotateX: 15},
+            {translate: [0.2, -0.3, 0.3]},
+          ],
+        }}
+        enterCallback={() => {
+          startMoveRight();
+        }}
+        exitCallback={() => {
+          stopMoveRight();
+        }}
+      />
+    </View>
+
+    <Mesh
+      source={{
+        mesh: asset('cockpit/cockpit.obj'),
+        mtl: asset('cockpit/cockpit.mtl'),
+        lit: true,
+      }}
+      style={{
+        transform: [{scale: [0.6, 0.6, 0.6]}],
+      }}
+    />
+  </View>
+);
