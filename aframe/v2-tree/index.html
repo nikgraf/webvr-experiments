@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <!-- Tree template. -->
+        <script id="tree-template" type="x-tmpl-mustache">
+          <a-entity position="{{ position }}">
+            <a-obj-model src="assets/tree-crown.obj" mtl="assets/tree-crown.mtl" position="0 2.5 0"></a-obj-model>
+            <a-obj-model src="assets/tree-trunk.obj" mtl="assets/tree-trunk.mtl" position="0 0 0"></a-obj-model>
+          </a-entity>
+        </script>
+      </a-assets>
+      <a-entity light="type: ambient; color: #FFF; intensity: 0.4"></a-entity>
+      <a-entity light="type: point; color: #FFF; decay: 2"
+          position="0 400 700"></a-entity>
+      <a-plane color="#5ff065" height="100" width="100" rotation="-90 0 0" position="0 -1 0"></a-plane>
+      <a-sky src="assets/heaven.png"></a-sky>
+    </a-scene>
+
+    <script>
+      const scene = document.querySelector('a-scene');
+      // compile the template
+      const treeTemplate = document.querySelector('#tree-template').innerHTML;
+      Mustache.parse(treeTemplate);
+
+      // insert two trees
+      const tree1 = Mustache.render(treeTemplate, { position: '0 -1 -5' });
+      scene.insertAdjacentHTML('beforeend', tree1);
+      const tree2 = Mustache.render(treeTemplate, { position: '5 -1 -5' });
+      scene.insertAdjacentHTML('beforeend', tree2);
+    </script>
+  </body>
+</html>
