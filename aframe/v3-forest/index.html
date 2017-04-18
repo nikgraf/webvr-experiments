@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.23.0/ramda.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <!-- Tree template. -->
+        <script id="tree-template" type="x-tmpl-mustache">
+          <a-entity position="{{ position }}">
+            <a-obj-model src="assets/tree-crown.obj" mtl="assets/tree-crown.mtl" position="0 2.5 0"></a-obj-model>
+            <a-obj-model src="assets/tree-trunk.obj" mtl="assets/tree-trunk.mtl" position="0 0 0"></a-obj-model>
+          </a-entity>
+        </script>
+      </a-assets>
+      <a-entity light="type: ambient; color: #FFF; intensity: 0.4"></a-entity>
+      <a-entity light="type: point; color: #FFF; decay: 2"
+          position="0 400 700"></a-entity>
+      <a-plane color="#5ff065" height="100" width="100" rotation="-90 0 0"></a-plane>
+      <a-sky src="assets/heaven.png"></a-sky>
+    </a-scene>
+
+    <script>
+      const scene = document.querySelector('a-scene');
+      // compile the template
+      const treeTemplate = document.querySelector('#tree-template').innerHTML;
+      Mustache.parse(treeTemplate);
+
+      const randomPosition = () => (Math.floor(Math.random() * 10) - 5);
+      const randomHeight = () => (Math.random() - 1);
+      const randomScale = () => (Math.random() * 0.25 + 1);
+
+      const grid = R.xprod(R.range(0, 10), R.range(0, 10));
+      const treePositions = grid.map((entry) => {
+        return { x: entry[0] * 8 + randomPosition(), z: entry[1] * 8 + randomPosition() };
+      });
+      const moveX = -35;
+      const moveZ = -35;
+
+      treePositions.forEach((pos) => {
+        const tree = Mustache.render(treeTemplate, { position: `${pos.x + moveX} 0 ${pos.z + moveZ}` });
+        scene.insertAdjacentHTML('beforeend', tree);
+      });
+    </script>
+  </body>
+</html>
