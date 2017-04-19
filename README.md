@@ -19,7 +19,7 @@ npm start
 
 Or check out the hosted [live demo of HelloWorld v3](https://nikgraf.github.io/webvr-experiments/HelloWorld/v3/) and [live demo of Animation v2](https://nikgraf.github.io/webvr-experiments/Animation/v2/).
 
-### [v1 - Basic Cube Rendering](https://github.com/nikgraf/webvr-expriments/tree/master/HelloWorld/v1)
+### [v1 - Basic Cube Rendering](https://github.com/nikgraf/webvr-experiments/tree/master/react-vr/v1-cube)
 
 <img width="1176" alt="screen shot cube" src="https://cloud.githubusercontent.com/assets/223045/21510601/a1957270-cc95-11e6-9e73-42f82339f76e.png">
 
@@ -29,7 +29,7 @@ In Blender I created a cube, removed the light and camera, added a material to c
 
 <img width="930" alt="cube setup in blender" src="https://cloud.githubusercontent.com/assets/223045/21511170/57abd1ec-cc9d-11e6-901d-e79958bfe1b3.png">
 
-### [v2 - Tree (first custom component)](https://github.com/nikgraf/webvr-expriments/tree/master/HelloWorld/v2)
+### [v2 - Tree (first custom component)](https://github.com/nikgraf/webvr-experiments/tree/master/react-vr/v2-tree)
 
 <img width="1176" alt="screen shot tree" src="https://cloud.githubusercontent.com/assets/223045/21510600/a1920982-cc95-11e6-8896-b5c963479a86.png">
 
@@ -60,7 +60,7 @@ In addition to that I generated a plane geometry in Blender as floor element. Fo
 
 Initially I planned to place the scenic camera approximately one meter above the ground, but discovered a [bug](https://github.com/facebookincubator/react-vr/issues/33) with the `<Scene />` component. My fallback was to position the floor as well as the trees -1 (meter) on the z-axis.
 
-### [v3 - Forest](https://github.com/nikgraf/webvr-expriments/tree/master/HelloWorld/v3)
+### [v3 - Forest](https://github.com/nikgraf/webvr-experiments/tree/master/react-vr/v3-forest)
 
 <img width="1176" alt="screen shot forest" src="https://cloud.githubusercontent.com/assets/223045/21510598/a19134da-cc95-11e6-94e5-af9a6279b368.png">
 
@@ -92,6 +92,10 @@ Right now 100 trees are generated and the user is placed at the center of the fo
 
 What bothered me a bit was that for each Tree a fetch request was fired. I was hoping that ReactVR would cache the geometry and material.
 
-### v4 - Animation (coming soon …)
+### [v4 - Animation (coming soon …)](https://github.com/nikgraf/webvr-experiments/tree/master/react-vr/v4-bouncing-text)
 
-Next up I'm going to look into animations using clouds and birds.
+Next up I'm going to write a guide about animations. There is already some code you can check out now:
+
+- [Bouncing Text](https://github.com/nikgraf/webvr-experiments/tree/master/react-vr/v4-bouncing-text)
+- [Star Wars Opening Crawl](https://github.com/nikgraf/webvr-experiments/tree/master/react-vr/v5-star-wars-opening-crawl)
+- [Rotating Cube](https://github.com/nikgraf/webvr-experiments/tree/master/react-vr/v6-rotating-cube)
