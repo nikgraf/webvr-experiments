@@ -2719,21 +2719,9 @@ os-tmpdir@^1.0.0, os-tmpdir@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
 
-ovr-audio@~0.1.0:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/ovr-audio/-/ovr-audio-0.1.6.tgz#303e6dc9179730e36bf1927eb1e144240a677231"
-  dependencies:
-    three "^0.80.1"
-
-ovr-video@~0.1.0:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/ovr-video/-/ovr-video-0.1.2.tgz#575c114457f7b06c1c6a73ac828e7d88acf154b1"
-  dependencies:
-    three "^0.80.1"
-
-ovrui@~0.1.0:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/ovrui/-/ovrui-0.1.7.tgz#4704b22f4d4cc6f834c5dc7b83808a6418e75398"
+ovrui@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ovrui/-/ovrui-1.0.0.tgz#6adb0d99dc9b20eb34f6e105f2086798a81d2daf"
   dependencies:
     three "^0.80.1"
 
@@ -3019,17 +3007,15 @@ react-transform-hmr@^1.0.4:
     global "^4.3.0"
     react-proxy "^1.1.7"
 
-react-vr-web@~0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/react-vr-web/-/react-vr-web-0.2.0.tgz#aa5dda164e689ce5002c5eee28044843fc9fe8eb"
+react-vr-web@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-vr-web/-/react-vr-web-1.0.0.tgz#b197fd3c8274b71a5721d890dd32aca5ab22489f"
   dependencies:
-    ovr-audio "~0.1.0"
-    ovr-video "~0.1.0"
-    ovrui "~0.1.0"
+    ovrui "~1.0.0"
 
-react-vr@~0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/react-vr/-/react-vr-0.2.0.tgz#cb7deb25337878b071667bd59c1a532ab714fe88"
+react-vr@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-vr/-/react-vr-1.0.0.tgz#57ce7faa6149f900dbdae9ea9ff42c06a5e2ea1b"
 
 react@~15.4.1:
   version "15.4.2"

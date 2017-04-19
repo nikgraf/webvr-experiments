@@ -10,13 +10,11 @@
   },
   "dependencies": {
     "easing": "^0.0.4",
-    "ovr-audio": "~0.1.0",
-    "ovr-video": "~0.1.0",
-    "ovrui": "~0.1.0",
+    "ovrui": "~1.0.0",
     "react": "~15.4.1",
     "react-native": "~0.42.0",
-    "react-vr": "~0.2.0",
-    "react-vr-web": "~0.2.0",
+    "react-vr": "~1.0.0",
+    "react-vr-web": "~1.0.0",
     "three": "^0.80.1"
   },
   "devDependencies": {
