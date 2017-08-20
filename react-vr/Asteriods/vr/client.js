@@ -8,7 +8,7 @@ import * as THREE from 'three';
 
 function init(bundle, parent, options) {
   // const camera = new THREE.PerspectiveCamera(60, 30, 0.01, 10000.0);
-  const vr = new VRInstance(bundle, 'v1', parent, {
+  const vr = new VRInstance(bundle, 'Asteroids', parent, {
     // Add custom options here
     // camera,
     cursorVisibility: 'visible',

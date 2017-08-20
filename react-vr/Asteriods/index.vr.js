@@ -17,7 +17,7 @@ import Button from './components/Button.js';
 
 const AnimatedWorld = Animated.createAnimatedComponent(World);
 
-class v1 extends React.Component {
+class Asteroids extends React.Component {
   constructor(props) {
     super(props);
 
@@ -135,4 +135,4 @@ class v1 extends React.Component {
   }
 }
 
-AppRegistry.registerComponent('v1', () => v1);
+AppRegistry.registerComponent('Asteroids', () => Asteroids);
