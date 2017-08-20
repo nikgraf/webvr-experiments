@@ -4,8 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node -e \"console.log('open browser at http:/localhost:8081/vr/\\n\\n');\" && node node_modules/react-native/local-cli/cli.js start",
+    "start-daemon": "node node_modules/react-native/local-cli/cli.js start &",
+    "start-int": "yarn run start-daemon && yarn run start-wait && yarn run test:tunnel",
+    "start-wait": "while ! curl --output /dev/null --silent --head --fail http://localhost:8081; do sleep 1 && echo -n .; done;",
     "bundle": "node node_modules/react-vr/scripts/bundle.js",
     "open": "node -e \"require('xopen')('http://localhost:8081/vr/')\"",
+    "test:tunnel": "ngrok start -config ngrok.yml -log=stdout integration > /dev/null &",
+    "test:tunnel-kill": "ps -ef | grep ngrok | grep -v grep | awk '{print $2}' | xargs kill",
     "postinstall": "node postinstall.js && echo done"
   },
   "dependencies": {
@@ -17,5 +22,8 @@
     "react-vr": "~0.1.0",
     "react-vr-web": "~0.1.0",
     "xopen": "1.0.0"
+  },
+  "devDependencies": {
+    "ngrok": "^2.2.6"
   }
 }

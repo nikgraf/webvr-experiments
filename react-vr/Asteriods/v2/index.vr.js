@@ -13,6 +13,7 @@ import Easing from 'Easing';
 import World from './components/World';
 import Asteroid01 from './components/Asteroid01';
 import Cockpit from './components/Cockpit';
+import Earth from './components/Earth';
 import Button from './components/Button.js';
 
 const AnimatedWorld = Animated.createAnimatedComponent(World);
@@ -27,7 +28,7 @@ class Asteroids extends React.Component {
       '../static_assets/space/space_up.png',
       '../static_assets/space/space_down.png',
       '../static_assets/space/space_back.png',
-      '../static_assets/space/space_front.png',
+      '../static_assets/space/space_front.png'
     ];
 
     this.state = {
@@ -41,32 +42,41 @@ class Asteroids extends React.Component {
   }
 
   startAnimation = (valueReference, startValue, addition) => {
-    Animated.timing(valueReference, {
-      duration: 20000,
-      toValue: startValue + addition,
-      easing: Easing.linear,
-    }).start(() => {
+    Animated.timing(
+      valueReference,
+      {
+        duration: 20000,
+        toValue: startValue + addition,
+        easing: Easing.linear,
+      }
+    ).start(() => {
       this.startAnimation(valueReference, startValue + addition, addition);
     });
-  };
+  }
 
-  startMoveYAnimation = addition => {
-    Animated.timing(this.state.x, {
-      duration: 100,
-      toValue: this.state.x._value - addition,
-      easing: Easing.linear,
-    }).start();
+  startMoveYAnimation = (addition) => {
+    Animated.timing(
+      this.state.x,
+      {
+        duration: 100,
+        toValue: this.state.x._value - addition,
+        easing: Easing.linear,
+      }
+    ).start();
 
-    Animated.timing(this.state.rotateY, {
-      duration: 100,
-      toValue: this.state.rotateY._value + addition,
-      easing: Easing.linear,
-    }).start(() => {
+    Animated.timing(
+      this.state.rotateY,
+      {
+        duration: 100,
+        toValue: this.state.rotateY._value + addition,
+        easing: Easing.linear,
+      }
+    ).start(() => {
       if (this.state.moveLeft || this.state.moveRight) {
         this.startMoveYAnimation(addition);
       }
     });
-  };
+  }
 
   componentDidMount() {
     // start continuous forward movement
@@ -74,50 +84,71 @@ class Asteroids extends React.Component {
   }
 
   startMoveLeft = () => {
-    this.setState(prevState => ({
-      ...prevState,
-      moveLeft: true,
-    }));
+    this.setState((prevState) => (
+      {
+        ...prevState,
+        moveLeft: true,
+      }
+    ));
     this.startMoveYAnimation(-1);
-  };
+  }
 
   stopMoveLeft = () => {
-    this.setState(prevState => ({
-      ...prevState,
-      moveLeft: false,
-    }));
-  };
+    this.setState((prevState) => (
+      {
+        ...prevState,
+        moveLeft: false,
+      }
+    ));
+  }
 
   startMoveRight = () => {
-    this.setState(prevState => ({
-      ...prevState,
-      moveRight: true,
-    }));
+    this.setState((prevState) => (
+      {
+        ...prevState,
+        moveRight: true,
+      }
+    ));
     this.startMoveYAnimation(1);
-  };
+  }
 
   stopMoveRight = () => {
-    this.setState(prevState => ({
-      ...prevState,
-      moveRight: false,
-    }));
-  };
+    this.setState((prevState) => (
+      {
+        ...prevState,
+        moveRight: false,
+      }
+    ));
+  }
 
   render() {
     return (
       <View>
         <AmbientLight intensity={0.85} />
-        <Pano source={{uri: this.spaceSkymap}} />
+        <Pano source={ {uri: this.spaceSkymap} }/>
 
         <Cockpit
           style={{
-            transform: [{scale: 1}, {translate: [0, 0, 1]}],
+            transform: [
+              {scale: 1},
+              {translate: [0, 0, 1]},
+            ]
           }}
           startMoveLeft={this.startMoveLeft}
           stopMoveLeft={this.stopMoveLeft}
           startMoveRight={this.startMoveRight}
           stopMoveRight={this.stopMoveRight}
         />
+
+        <Earth
+          style={{
+            transform: [
+              {scale: 1},
+              {translate: [0, 0, -10]},
+            ]
+          }}
+        />
+
         <Animated.View
           style={{
             transform: [
@@ -125,7 +156,7 @@ class Asteroids extends React.Component {
               {translateX: this.state.x},
               {translateY: this.state.y},
               {translateZ: this.state.z},
-            ],
+            ]
           }}
         >
           <AnimatedWorld />
@@ -133,6 +164,6 @@ class Asteroids extends React.Component {
       </View>
     );
   }
-}
+};
 
 AppRegistry.registerComponent('Asteroids', () => Asteroids);

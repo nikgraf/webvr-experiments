@@ -1,0 +1,9 @@
+authtoken: 5JdqYqosDPsWvEPK1R3DZ_2q2T2fysCYufqK71ZBELA
+region: us
+console_ui: iftty
+tunnels:
+  integration:
+      proto: http
+      addr: 8081
+      subdomain: vr-asteroids
+

@@ -9,14 +9,14 @@ const resolver = path.resolve(
   '..',
   '..',
   'packager',
-  'defaults.js',
+  'defaults.js'
 );
 
-const fileContents = fs
-  .readFileSync(resolver, 'utf8')
-  .replace(
-    "['ios', 'android', 'windows', 'web']",
-    "['ios', 'android', 'vr', 'windows', 'web']",
-  )
-  .replace("'parse',", "'parse', 'react-vr',");
+const fileContents = fs.readFileSync(resolver, 'utf8').replace(
+  "['ios', 'android', 'windows', 'web']",
+  "['ios', 'android', 'vr', 'windows', 'web']"
+).replace(
+  "'parse',",
+  "'parse', 'react-vr',"
+);
 fs.writeFileSync(resolver, fileContents);
