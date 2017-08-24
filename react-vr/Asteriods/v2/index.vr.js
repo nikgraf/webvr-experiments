@@ -58,7 +58,7 @@ class Asteroids extends React.Component {
     Animated.timing(
       this.state.x,
       {
-        duration: 100,
+        duration: 300,
         toValue: this.state.x._value - addition,
         easing: Easing.linear,
       }
@@ -67,7 +67,7 @@ class Asteroids extends React.Component {
     Animated.timing(
       this.state.rotateY,
       {
-        duration: 100,
+        duration: 300,
         toValue: this.state.rotateY._value + addition,
         easing: Easing.linear,
       }
@@ -80,7 +80,7 @@ class Asteroids extends React.Component {
 
   componentDidMount() {
     // start continuous forward movement
-    this.startAnimation(this.state.z, -28, 40);
+    this.startAnimation(this.state.z, -28, 10);
   }
 
   startMoveLeft = () => {
@@ -124,7 +124,14 @@ class Asteroids extends React.Component {
   render() {
     return (
       <View>
-        <AmbientLight intensity={0.85} />
+        <AmbientLight
+          intensity={2.1}
+          style={{
+            transform: [
+              { translate: [-172, -110, -170] },
+            ]
+          }}
+        />
         <Pano source={ {uri: this.spaceSkymap} }/>
 
         <Cockpit
@@ -138,15 +145,6 @@ class Asteroids extends React.Component {
           stopMoveLeft={this.stopMoveLeft}
           startMoveRight={this.startMoveRight}
           stopMoveRight={this.stopMoveRight}
-        />
-
-        <Earth
-          style={{
-            transform: [
-              {scale: 1},
-              {translate: [0, 0, -10]},
-            ]
-          }}
         />
 
         <Animated.View

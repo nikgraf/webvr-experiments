@@ -4,6 +4,7 @@ import Asteroid01 from './Asteroid01';
 import Asteroid02 from './Asteroid02';
 import Asteroid03 from './Asteroid03';
 import Earth from './Earth';
+import Moon from './Moon';
 
 export default class World extends React.Component {
   render() {
@@ -14,7 +15,16 @@ export default class World extends React.Component {
           style={{
             transform: [
               {scale: 0.5},
-              {translate: [0, 0, -30]},
+              {translate: [20, -3, -330]},
+            ]
+          }}
+        />
+
+        <Asteroid01
+          style={{
+            transform: [
+              {scale: 1.7},
+              {translate: [-80, 33, -180]},
             ]
           }}
         />
@@ -23,7 +33,7 @@ export default class World extends React.Component {
           style={{
             transform: [
               {scale: 0.9},
-              {translate: [-30, 12, -20]},
+              {translate: [-30, 12, -120]},
             ]
           }}
         />
@@ -32,7 +42,7 @@ export default class World extends React.Component {
           style={{
             transform: [
               {scale: 1},
-              {translate: [50, -3, -20]},
+              {translate: [50, -3, -50]},
             ]
           }}
         />
@@ -40,7 +50,17 @@ export default class World extends React.Component {
         <Earth
           style={{
             transform: [
-              {translate: [-45, 0, -170]},
+              {scale: 3.2},
+              {translate: [-72, -10, -170]},
+            ]
+          }}
+        />
+
+        <Moon
+          style={{
+            transform: [
+              {scale: 3},
+              {translate: [60, 10, -220]},
             ]
           }}
         />

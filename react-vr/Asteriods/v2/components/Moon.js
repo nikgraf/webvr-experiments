@@ -7,12 +7,12 @@ import {
 } from 'react-vr';
 import Easing from 'Easing';
 
-export default class Earth extends React.Component {
+export default class Moon extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      rotationX: new Animated.Value(0),
+      rotationY: new Animated.Value(0),
     };
   }
 
@@ -20,7 +20,7 @@ export default class Earth extends React.Component {
     Animated.timing(
       valueReference,
       {
-        duration: 9000000,
+        duration: 450000,
         toValue: startValue + addition,
         easing: Easing.linear,
       }
@@ -30,7 +30,7 @@ export default class Earth extends React.Component {
   }
 
   componentDidMount() {
-    this.startAnimation(this.state.rotationX, 0, 180);
+    this.startAnimation(this.state.rotationY, 0, 360);
   }
 
   render() {
@@ -40,17 +40,17 @@ export default class Earth extends React.Component {
         <Animated.View
           style={{
             transform: [
-              {rotateX: this.state.rotationX},
+              { rotateY: this.state.rotationY },
             ]
           }}
         >
           <Mesh
             style={{
               transform: [
-                {scale: 0.2 },
+                { scale: 0.2 },
               ]
             }}
-            source={{ mesh: asset('earth/earth.obj'), mtl: asset('earth/earth.mtl'), lit: true }}
+            source={{ mesh: asset('moon/moon.obj'), mtl: asset('moon/moon.mtl'), lit: true }}
           />
         </Animated.View>
       </View>

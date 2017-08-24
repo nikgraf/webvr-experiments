@@ -22,7 +22,7 @@ export default class Asteroid02 extends React.Component {
   };
 
   componentDidMount() {
-    this.startAnimation(this.state.rotationX, 0, 360);
+    this.startAnimation(this.state.rotationX, 0, -360);
     this.startAnimation(this.state.rotationZ, 0, 120);
   }
 
